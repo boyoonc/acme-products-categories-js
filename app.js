@@ -26,7 +26,8 @@ app.use(function(req, res, next){
 app.get('/', function(req, res, next){
 	// res.send('hello') // what done callback is next similar to? pipeline...
 	// res.render('index.html');
-	res.render('index.html', { 
+	res.render('index.html', {
+		cat_name: 'home',
 		count: db.getCategoryNames().length, 
 		categories: db.getCategoryNames()
 	}) //templating engine takes two things: page to render & data we want to pass down

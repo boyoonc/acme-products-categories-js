@@ -13,6 +13,7 @@ var path = require('path');//man forgot to add this to with the pose. could it b
 app.get('/:cat_name/products', function(req, res, next){
 	var cat_name = req.params.cat_name 
 	res.render('products.html', {
+		// pill_status: cat_name,
 		cat_name: cat_name,
 		count: db.getCategoryNames().length, 
 		categories: db.getCategoryNames(),

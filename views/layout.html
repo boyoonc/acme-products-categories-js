@@ -17,9 +17,12 @@
 		    	<div> home tab stuff </div>
 				 
 				 <ul class = 'nav nav-pills'>
-				 <li class = 'active'><a href='/'>Home</a></li>
+					 <li {% if cat_name == 'home' %} class = 'active'{% endif %} >
+					 <a href='/'> Home </a></li>
 				 {% for category in categories %}
-				 	<li><a href = '/categories/{{category}}/products'> {{ category }}</a></li>
+				 	<li {% if category == cat_name %} class = 'active' {% endif %} >
+				 	<!-- wow i kept getting errors because I was using {{category}} inside the if statement. how do i get a better feel for this? (also same error for mistakenly using = in if instead of ==) -->
+				 	<a href = '/categories/{{category}}/products'> {{ category }}</a></li>
 				 {% endfor %}
 				 </ul>
 
