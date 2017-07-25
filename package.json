@@ -13,6 +13,7 @@
     "body-parser": "^1.17.2",
     "bootstrap": "^3.3.7",
     "express": "^4.15.3",
+    "method-override": "^2.3.9",
     "nunjucks": "^3.0.1"
   }
 }

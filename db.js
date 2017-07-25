@@ -70,10 +70,12 @@ module.exports = {
 
 	deleteProduct: function(category, in_product_id){
 		var new_products_obj = products[category].filter(function(product){
+			console.log(product, product.id, in_product_id)
 			if(product.id != in_product_id){
-				return false
+				return product
 			}
 		})
+		console.log(new_products_obj, 'new arr')
 		products[category] = new_products_obj
 	},
 
