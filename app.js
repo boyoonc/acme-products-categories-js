@@ -1,5 +1,7 @@
 var express = require('express');
 var nunjucks = require('nunjucks');
+var db = require('./db.js')
+
 
 var app = express();
 
@@ -16,7 +18,8 @@ app.use(function(req, res, next){
 
 app.get('/', function(req, res, next){
 	// res.send('hello') // what done callback is next similar to? pipeline...
-	res.render('index.html');
+	// res.render('index.html');
+	res.render('index.html', { count: db.getCategoryNames().length}) //templating engine takes two things: page to render & data we want to pass down
 })
 
 var port = process.env.PORT || 3000; //this is for when heroku gives me an address
