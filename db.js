@@ -57,7 +57,7 @@ module.exports = {
 	},
 
 	createProduct: function(category, in_product_name){
-		if(!product.name){
+		if(!in_product_name){
 			throw 'name is required'
 		}
 		var num_products = products[category].length
@@ -65,7 +65,7 @@ module.exports = {
 			id: num_products+1,
 			name: in_product_name
 		}
-		products[category].push(product)
+		products[category].push(newProduct)
 	},
 
 	deleteProduct: function(category, in_product_id){

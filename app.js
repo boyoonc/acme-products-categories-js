@@ -11,6 +11,8 @@ app.use('/vendor', express.static(path.join(__dirname, 'node_modules')));
 //static routing. express let me say, for every request that comes in with /vendor, use module path to allow me to concatinate things together. current directory name I'm in (__dirname). this is why i require path up there.
 nunjucks.configure('views', {noCache: true});//nodemon reloads when change in js
 
+app.use(require('body-parser').urlencoded( { extended: false } )) //why require inside use? everything about this confuses me
+
 app.use(function(req, res, next){
 	console.log(req.url); //middleware!
 	next();
