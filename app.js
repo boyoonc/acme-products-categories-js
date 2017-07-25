@@ -32,6 +32,12 @@ app.get('/', function(req, res, next){
 	}) //templating engine takes two things: page to render & data we want to pass down
 })
 
+app.post('/', function(req, res, next){
+	var new_cat_name = req.body.new_cat_name
+	db.createCategory(new_cat_name)
+	res.redirect('/')
+}) //how would I have put this in routes instead of here?
+
 app.use('/categories', require ('./routes/categories')); // with the verb(?) /categories here, now changing the commented out routed to start with /, as /categories will be caught here before going to router
 
 app.use(function(err, req, res, next){

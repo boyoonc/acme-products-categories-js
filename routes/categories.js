@@ -22,14 +22,20 @@ app.get('/:cat_name/products', function(req, res, next){
 
 app.post('/:cat_name/products', function(req, res, next){
 	var cat_name = req.params.cat_name 
-	db.createProduct(cat_name, req.body.name);
+	db.createProduct(cat_name, req.body.prod_name);
 	res.redirect('/categories/'+cat_name+'/products')
 })
 
 app.delete('/:cat_name/products/:prod_id', function(req, res, next){
 	var cat_name = req.params.cat_name
 	var prod_id = parseInt(req.params.prod_id)
-	console.log(cat_name, prod_id)
+	// console.log(cat_name, prod_id)
 	db.deleteProduct(cat_name, prod_id)//slowly getting a sense of what req.params does but not fully
 	res.redirect('/categories/'+cat_name+'/products')
+})
+
+app.delete('/:cat_name', function(req, res, next){
+	var cat_name = req.params.cat_name
+	db.deleteCategory(cat_name)
+	res.redirect('/')
 })

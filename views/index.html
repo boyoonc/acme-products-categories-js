@@ -17,8 +17,19 @@
 {% extends "layout.html" %}
 
 {% block content %}
-
+	<div>Under the home tab</div>
  	<!-- input box for category name
  	save button -->
+ 	<div class = 'well'>
+ 		<form action = '/' method = 'POST'>
+ 			<div class = 'form-group'>
+ 				<input class = 'form-control' name = 'new_cat_name' placeholder = 'category name'>
+ 			</div>
+ 			<div class = 'form-group'>
+ 				<button class = 'btn btn-primary'> Save </button>
+ 			</div>
+ 		</form>
+ 	</div>
+
 
 {% endblock %}

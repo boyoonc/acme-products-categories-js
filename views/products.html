@@ -17,10 +17,10 @@
 		<!-- <form action='/categories' method ='POST'> -->
 		<!-- I wish i understood what form action did better. Does it just have to point back to the same url as when the input gets data? -->
 			<div class = 'form-group'>
-				<input class = 'form-control' name = 'name' placeholder = 'product name'>
+				<input class = 'form-control' name = 'prod_name' placeholder = 'product name'>
 			</div>
 			<div class = 'form-group'>
-				<button class = 'btn btn-primary'> Save</button>
+				<button class = 'btn btn-primary'> Save </button>
 				<!-- where did i say that clicking this buttons means trigger the post? hm 
 				apparently, by having it be the button inside the form whose method is to post-->
 			</div>
@@ -47,6 +47,18 @@
 
 	<!-- I want to write some kind of jquery to change which button is active.. but not sure where i would put that js -->
 
+	<!-- delete category section -->
+
+	<div> delete whole category </div>
+	<form action = '/categories/{{cat_name}}?_method=DELETE' method = 'POST'>
+		<div class = 'form-group'>
+			<button class = 'btn btn-danger'> Delete Category</button>
+		</div>
+	</form>
 	
+
+
+
+
 
 {% endblock %}
