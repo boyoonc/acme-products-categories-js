@@ -2,10 +2,16 @@
 
 {% block content %}
 
- <div> category tab stuff </div>
-<ul class = 'nav nav-pills'>
- {% for category in products %}
- 	<li> {{ products }}</li>
- {% endfor %}
- </ul>
+	<div> category tab stuff </div>
+
+	<!-- input field for product name
+	save button
+	list out existing product in this category
+	delete product -->
+	<div> this cat has products {{products}}
+	{% for product in products %}
+		<h3> {{product.name}} </h3>
+	{% endfor %}
+	</div>
+
 {% endblock %}

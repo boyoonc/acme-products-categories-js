@@ -21,12 +21,30 @@ app.use(function(req, res, next){
 app.get('/', function(req, res, next){
 	// res.send('hello') // what done callback is next similar to? pipeline...
 	// res.render('index.html');
-	res.render('index.html', { count: db.getCategoryNames().length, categories: db.getCategoryNames()}) //templating engine takes two things: page to render & data we want to pass down
+	res.render('index.html', { 
+		count: db.getCategoryNames().length, 
+		categories: db.getCategoryNames()
+	}) //templating engine takes two things: page to render & data we want to pass down
 })
 
 app.get('/categories', function(req, res, next){
-	res.render('products.html', {products: db.getCategoryNames() })
+	res.render('products.html', {
+		products: db.getCategoryNames() 
+	})
+}) //i think this will soon become not useful
+
+app.get('/categories/:cat_name', function(req, res, next){
+	var cat_name = req.params.cat_name //a little confusing so far
+	res.render('products.html', {
+		count: db.getCategoryNames().length, 
+		categories: db.getCategoryNames(),
+		products: db.getProductsByCategory(cat_name)
+	})
 })
+
+
+
+
 
 var port = process.env.PORT || 3000; //this is for when heroku gives me an address
 

@@ -17,21 +17,21 @@ var products = //why did products need to be in a list in tweetbank.js? will thi
 {
   "Foo Category": [
     {
-      "name": "foo 1",
+      "name": "foo product 1",
       "id": 1
     },
     {
-      "name": "foo 2",
+      "name": "foo product 2",
       "id": 2
     }
   ],
   "Bar Category": [
     {
-      "name": "bar 1",
+      "name": "bar product 1",
       "id": 1
     },
     {
-      "name": "bar 2",
+      "name": "bar product 2",
       "id": 2
     }
   ]
