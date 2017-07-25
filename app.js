@@ -17,6 +17,7 @@ app.use(function(req, res, next){
 })
 
 
+//these are restful routes
 
 app.get('/', function(req, res, next){
 	// res.send('hello') // what done callback is next similar to? pipeline...
@@ -27,13 +28,19 @@ app.get('/', function(req, res, next){
 	}) //templating engine takes two things: page to render & data we want to pass down
 })
 
+app.use('/categories', require ('./routes/categories')); // with the verb(?) /categories here, now changing the commented out routed to start with /, as /categories will be caught here before going to router
+
+
+
+/* has some notes
+
 app.get('/categories', function(req, res, next){
 	res.render('products.html', {
 		products: db.getCategoryNames() 
 	})
 }) //i think this will soon become not useful
 
-app.get('/categories/:cat_name', function(req, res, next){
+app.get('/categories/:cat_name/products', function(req, res, next){
 	var cat_name = req.params.cat_name //a little confusing so far
 	res.render('products.html', {
 		count: db.getCategoryNames().length, 
@@ -41,7 +48,7 @@ app.get('/categories/:cat_name', function(req, res, next){
 		products: db.getProductsByCategory(cat_name)
 	})
 })
-
+*/
 
 
 

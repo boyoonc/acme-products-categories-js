@@ -4,14 +4,35 @@
 
 	<div> category tab stuff </div>
 
-	<!-- input field for product name
-	save button
-	list out existing product in this category
-	delete product -->
+
 	<div> this cat has products {{products}}
 	{% for product in products %}
 		<h3> {{product.name}} </h3>
 	{% endfor %}
 	</div>
+
+	<!-- input field for product name
+	save button
+	list out existing product in this category
+	delete product -->
+
+	<div class = 'well'>
+		<form action='/categories/{{category}}/products' method ='POST'>
+		<!-- <form action='/categories' method ='POST'> -->
+		<!-- I wish i understood what form action did better. Does it just have to point back to the same url as when the input gets data? -->
+			<div class = 'form-group'>
+				<input class = 'form-control' name = 'name' placeholder = 'product name'>
+			</div>
+			<div class = 'form-group'>
+				<button class = 'btn btn-primary'> Save</button>
+			</div>
+
+
+		</form>
+	</div>
+
+	<!-- I want to write some kind of jquery to change which button is active.. but not sure where i would put that js -->
+
+	
 
 {% endblock %}
