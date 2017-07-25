@@ -69,7 +69,7 @@ app.get('/categories/:cat_name/products', function(req, res, next){
 var port = process.env.PORT || 3000; //this is for when heroku gives me an address
 
 app.listen(port, function(){
-	console.log("Hello, I'm listening on port ${ port }")
+	console.log(`Hello, I'm listening on port ${port}`)
 }) // why doesn't my terminal say 3000? but it works at 3000..
 
 
