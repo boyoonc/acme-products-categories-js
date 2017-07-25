@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<link rel='stylesheet' href='/vendor/bootstrap/dist/css/bootstrap.css'/>
+
+	</head>
+	<body>
+		<div class='container'>
+			<h1>Weekend Project 2</h1>
+			<div class = 'well'> 
+			We have information on <a href = '/categories'> {{count}} categories..</a>
+			</div>
+			
+		</div>
+		<!-- Begin page content -->
+		    
+
+
+		    <div class="container">
+		    	<div> home tab stuff </div>
+				 
+				 <ul class = 'nav nav-pills'>
+				 <li class = 'active'><a href='/home'>Home</a></li>
+				 {% for category in categories %}
+				 	<li><a href = '#'> {{ category }}</a></li>
+				 {% endfor %}
+				 </ul>
+
+		        {% block content %}Welcome to my hw, idk what this is for tbh{% endblock %}
+		    </div> <!-- end container -->
+	</body>
+
+</html>

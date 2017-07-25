@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+ <div> category tab stuff </div>
+<ul class = 'nav nav-pills'>
+ {% for category in products %}
+ 	<li> {{ products }}</li>
+ {% endfor %}
+ </ul>
+{% endblock %}
